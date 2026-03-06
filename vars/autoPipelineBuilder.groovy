@@ -8,7 +8,7 @@ def call() {
 
             stage('Checkout') {
                 steps {
-                    git url: 'https://github.com/dkasha14/jenkins-shared-library.git', branch: 'master'
+                    git url: 'https://github.com/dkasha14/JavaSpringBoot.git', branch: 'master'
                 }
             }
 
