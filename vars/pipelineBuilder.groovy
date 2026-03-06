@@ -17,7 +17,13 @@ def call(String appType) {
                     script {
 
                         if (appType == "python") {
-                            sh "pip3 install -r requirements.txt || true"
+                            sh '''
+                            if [ -f requirements.txt ]; then
+                                pip3 install -r requirements.txt
+                            else
+                                echo "No requirements.txt found"
+                            fi
+                            '''
                         }
 
                         if (appType == "java") {
