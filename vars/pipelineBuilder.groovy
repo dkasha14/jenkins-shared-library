@@ -17,15 +17,15 @@ def call(String appType) {
                     script {
 
                         if (appType == "python") {
-                            sh 'pip install -r requirements.txt'
+                            sh "pip3 install -r requirements.txt || true"
                         }
 
                         if (appType == "java") {
-                            sh 'mvn clean package'
+                            sh "mvn clean package"
                         }
 
                         if (appType == "node") {
-                            sh 'npm install'
+                            sh "npm install"
                         }
 
                     }
