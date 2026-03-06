@@ -8,7 +8,7 @@ def call(String appType) {
 
             stage('Checkout') {
                 steps {
-                    checkout scm
+                    git url: 'https://github.com/dkasha14/jenkins-shared-library.git', branch: 'master'
                 }
             }
 
@@ -17,15 +17,15 @@ def call(String appType) {
                     script {
 
                         if (appType == "python") {
-                            sh "pip install -r requirements.txt"
+                            sh 'pip install -r requirements.txt'
                         }
 
                         if (appType == "java") {
-                            sh "mvn clean package"
+                            sh 'mvn clean package'
                         }
 
                         if (appType == "node") {
-                            sh "npm install"
+                            sh 'npm install'
                         }
 
                     }
